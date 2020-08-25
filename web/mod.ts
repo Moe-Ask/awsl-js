@@ -5,4 +5,8 @@ import { MainController } from "./MainController.ts";
 @alosaur.Area({
     controllers: [MainController]
 })
-export class MainArea {}
+class MainArea {}
+
+export const settings = {
+    areas: [MainArea]
+}

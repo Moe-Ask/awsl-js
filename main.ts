@@ -1,18 +1,11 @@
-import {alosaur, dotenv, uuid, utils} from './pkg.ts'
-import {MainArea} from "./web/mod.ts";
+/// <reference path = "./global.d.ts" />
 
+import {alosaur, dotenv, uuid, utils} from './pkg.ts'
+import {settings} from "./web/mod.ts";
 import {open_db} from './db/mod.ts'
 
 const { App } = alosaur
 const { env } = utils
-
-declare global {
-    var token: string
-
-    interface ImportMeta {
-        main: boolean
-    }
-}
 
 if (import.meta.main) {
     dotenv.config({
@@ -23,9 +16,7 @@ if (import.meta.main) {
 
     await open_db()
 
-    const app = new App({
-        areas: [MainArea]
-    })
+    const app = new App(settings)
 
     globalThis.token = env("TOKEN", uuid.v4.generate())
 
