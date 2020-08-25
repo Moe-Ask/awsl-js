@@ -9,7 +9,7 @@ deno版short link
 wget https://cdn.jsdelivr.net/gh/Moe-Ask/short-link-js/main.tsconfig.json
 
 // 运行
-deno install -A -c main.tsconfig.json -n masl-js https://cdn.jsdelivr.net/gh/Moe-Ask/short-link-js/main.ts
+deno install --allow-net --allow-read --allow-write --allow-env -c main.tsconfig.json -n masl-js https://cdn.jsdelivr.net/gh/Moe-Ask/short-link-js/main.ts
 ```
 ## 环境变量
 
