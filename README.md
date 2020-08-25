@@ -3,14 +3,23 @@ deno版short link
 
 ### [安装deno](https://deno.land/manual/getting_started/installation)
 
-## Install
-```shell script
-// 获取tsconfig
-wget https://cdn.jsdelivr.net/gh/Moe-Ask/short-link-js/main.tsconfig.json
+## Install and Run
+#### 获取tsconfig  
+`wget https://cdn.jsdelivr.net/gh/Moe-Ask/short-link-js/main.tsconfig.json`
 
-// 运行
-deno install --allow-net --allow-read --allow-write --allow-env -c main.tsconfig.json -n masl-js https://cdn.jsdelivr.net/gh/Moe-Ask/short-link-js/main.ts
+#### 安装  
 ```
+deno install -A -c main.tsconfig.json -n masl-js https://cdn.jsdelivr.net/gh/Moe-Ask/short-link-js/main.ts
+```
+
+#### 运行
+`masl-js`  
+或  
+将`安装`命令的`install`改成run
+
+#### 生成 openapi.json
+`deno run -A -c main.tsconfig.json https://cdn.jsdelivr.net/gh/Moe-Ask/short-link-js/openapi.ts`
+
 ## 环境变量
 
 | 变量 | 默认 | 描述 |
