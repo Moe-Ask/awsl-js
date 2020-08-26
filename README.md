@@ -29,3 +29,4 @@ deno install -A -c main.tsconfig.json -n masl-js https://cdn.jsdelivr.net/gh/Moe
 | DB_PATH | ./masl.db | sqlite数据库文件位置 |
 | CUSTOM_SYMBOL | # | 自定义短链前缀 |
 | URL_MAX | 250 | 长链接长度限制(n/字符 |
+| REDIRECT_TO_HOME | 关 | 短链不存在时302到此地址 |

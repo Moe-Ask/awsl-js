@@ -10,9 +10,13 @@ const {
     Body,
     Controller,
     Post,
+    Get,
+    Param,
     UnauthorizedError,
     HttpError,
-    InternalServerError
+    InternalServerError,
+    NotFoundError,
+    Redirect
 } = alosaur
 
 
@@ -31,6 +35,16 @@ class ConflictError extends HttpError {
 
 @Controller()
 export class MainController {
+    @Get("/:short")
+    async short(@Param("short") short: string) {
+        short = short.trim()
+        const link: Links = await Links.where("short", short).first()
+        const re = env("REDIRECT_TO_HOME", undefined)
+        if (link === undefined && re === undefined)
+                return new NotFoundError(`短链接\`${short}\`不存在`)
+        return Redirect(link?.url ?? re)
+    }
+
     @Post("/link")
     async link(@Body() new_link: NewLink) {
         // 净身(bushi
