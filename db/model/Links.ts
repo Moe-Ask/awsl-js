@@ -14,8 +14,7 @@ export class Links extends Model {
 
     static fields = {
         short: {
-            type: DataTypes.STRING,
-            unique: true
+            type: DataTypes.STRING
         },
         unique_id: {
             type: DataTypes.INTEGER,
@@ -24,7 +23,6 @@ export class Links extends Model {
         },
         url: {
             ...DataTypes.string(utils.env("URL_MAX", 250) as number),
-            unique: true,
             allowNull: false
         },
     }

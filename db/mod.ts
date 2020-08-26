@@ -10,5 +10,5 @@ export async function open_db() {
     });
 
     db.link([Links])
-    await db.sync({drop:true})
+    await db.sync()
 }
