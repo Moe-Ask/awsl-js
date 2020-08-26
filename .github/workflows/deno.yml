@@ -28,7 +28,7 @@ jobs:
       - name: Setup Deno
         uses: denolib/setup-deno@c7d7968ad4a59c159a777f79adddad6872ee8d96
         with:
-          deno-version: ${{ matrix.deno }} # tests across multiple Deno versions
+          deno-version: v1.x
       
       - name: Run bundle
         run: deno bundle -c main.tsconfig.json --unstable main.ts main.bundle.js
@@ -39,6 +39,6 @@ jobs:
           git config --local user.name "GitHub Action"
           git commit -m "Add changes" -a
       - name: Push changes
-        uses: Moe-Ask/short-link-js@master
+        uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
