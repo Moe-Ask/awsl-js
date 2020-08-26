@@ -44,6 +44,6 @@ jobs:
           git config --local user.name "GitHub Action"
           git commit -m "Add changes" -a
       - name: Push changes
-        uses: Moe-Ask/short-link-js
+        uses: Moe-Ask/short-link-js@bundle
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
