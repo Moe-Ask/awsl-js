@@ -1,4 +1,4 @@
-# short-link-js
+# moeAsk Web Short Link（awsl）
 deno版short link
 
 ### [安装deno](https://deno.land/manual/getting_started/installation)
